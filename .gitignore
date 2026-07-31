@@ -7,3 +7,6 @@ models/mountain-ner/training_args.bin
 models/mountain-ner/checkpoint-*/
 
 .env
+
+# Trained model files
+models/mountain-ner/
