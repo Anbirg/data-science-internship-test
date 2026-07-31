@@ -1,3 +1,22 @@
+## Project Structure
+📦 data/
+    Dataset
+
+📦 notebooks/
+    01_dataset_creation.ipynb   ← dataset generation
+    02_training_colab.ipynb     ← full model implementation
+    03_demo.ipynb               ← inference examples
+
+📦 src/
+    generate_dataset.py
+    train.py
+    inference.py
+
+📦 reports/
+    Manual evaluation
+
+    The complete implementation is available in notebooks/02_training_colab.ipynb.
+
 # Mountain Name Recognition with Transformers
 
 Named entity recognition project for detecting mountain names in English text.
