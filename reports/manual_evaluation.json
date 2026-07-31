@@ -1,0 +1,70 @@
+[
+  {
+    "text": "After three days of hiking, the group finally saw Mount Everest through the clouds.",
+    "expected": [
+      "Mount Everest"
+    ],
+    "predicted": [
+      "Mount Everest"
+    ],
+    "comment": "Correct prediction."
+  },
+  {
+    "text": "The climbers compared routes on Annapurna and K2.",
+    "expected": [
+      "Annapurna",
+      "K2"
+    ],
+    "predicted": [
+      "Annapur",
+      "K2"
+    ],
+    "comment": "Boundary error for Annapurna in this context."
+  },
+  {
+    "text": "Everest released a new software product last week.",
+    "expected": [],
+    "predicted": [],
+    "comment": "Correctly rejected ambiguous non-mountain usage."
+  },
+  {
+    "text": "The annual summit will be held in London.",
+    "expected": [],
+    "predicted": [],
+    "comment": "Correctly rejected a generic mountain-related word."
+  },
+  {
+    "text": "Snow covered the slopes of Mount Elbrus after the storm.",
+    "expected": [
+      "Mount Elbrus"
+    ],
+    "predicted": [
+      "Mount Elbrus"
+    ],
+    "comment": "Correct prediction."
+  },
+  {
+    "text": "She bought a Fuji camera before her trip.",
+    "expected": [],
+    "predicted": [],
+    "comment": "Correctly rejected brand usage."
+  },
+  {
+    "text": "Mountains surrounded the village, but no specific peak was mentioned.",
+    "expected": [],
+    "predicted": [],
+    "comment": "Correctly rejected a generic plural noun."
+  },
+  {
+    "text": "The expedition moved from Mont Blanc toward the Matterhorn.",
+    "expected": [
+      "Mont Blanc",
+      "Matterhorn"
+    ],
+    "predicted": [
+      "Mont Blanc",
+      "Matterhorn"
+    ],
+    "comment": "Both entities were recognized correctly."
+  }
+]

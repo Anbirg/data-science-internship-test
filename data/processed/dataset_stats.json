@@ -1,0 +1,35 @@
+{
+  "train": {
+    "examples": 2400,
+    "positive_examples": 1680,
+    "negative_examples": 720,
+    "entity_mentions": 2040,
+    "tag_counts": {
+      "O": 21308,
+      "B-MOUNTAIN": 2040,
+      "I-MOUNTAIN": 1708
+    }
+  },
+  "validation": {
+    "examples": 300,
+    "positive_examples": 210,
+    "negative_examples": 90,
+    "entity_mentions": 255,
+    "tag_counts": {
+      "O": 2732,
+      "B-MOUNTAIN": 255,
+      "I-MOUNTAIN": 214
+    }
+  },
+  "test": {
+    "examples": 300,
+    "positive_examples": 210,
+    "negative_examples": 90,
+    "entity_mentions": 255,
+    "tag_counts": {
+      "O": 2689,
+      "B-MOUNTAIN": 255,
+      "I-MOUNTAIN": 210
+    }
+  }
+}

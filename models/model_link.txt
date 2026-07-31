@@ -1,0 +1,2 @@
+Add the Hugging Face model URL after training, for example:
+https://huggingface.co/USERNAME/mountain-ner-distilbert
