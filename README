@@ -1,0 +1,65 @@
+# Task 2 — Sentinel-2 Image Matching
+
+## Overview
+
+This task demonstrates feature-based matching between two Sentinel-2 satellite images acquired on different dates.
+
+The objective is to detect reliable correspondences despite seasonal and illumination changes.
+
+---
+
+## Dataset
+
+Two Sentinel-2 RGB images were used:
+
+- `T36UYA_20190606T083601_TCI.jp2`
+- `T36UYA_20190909T083559_TCI.jp2`
+
+---
+
+## Workflow
+
+### 1. Dataset preparation
+
+Notebook:
+
+`01_dataset_preparation.ipynb`
+
+Steps:
+
+- Load Sentinel-2 images
+- Resize images for faster processing
+- Convert images to grayscale
+
+---
+
+### 2. Feature matching
+
+Notebook:
+
+`02_demo.ipynb`
+
+Pipeline:
+
+- Detect SIFT keypoints
+- Extract SIFT descriptors
+- Match descriptors using FLANN
+- Filter matches using Lowe Ratio Test
+- Estimate homography with RANSAC
+- Visualize inlier correspondences
+
+---
+
+## Technologies
+
+- Python
+- OpenCV
+- rasterio
+- NumPy
+- Matplotlib
+
+---
+
+## Result
+
+The implemented pipeline successfully detects robust feature correspondences between satellite images captured at different dates.
