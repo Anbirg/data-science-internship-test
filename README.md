@@ -1,116 +1,54 @@
-## Project Structure
-📦 data/
-    Dataset
+# Data Science Internship Test
 
-📦 notebooks/
-    01_dataset_creation.ipynb   ← dataset generation
-    02_training_colab.ipynb     ← full model implementation
-    03_demo.ipynb               ← inference examples
+This repository contains solutions for two independent internship tasks.
 
-📦 src/
-    generate_dataset.py
-    train.py
-    inference.py
+---
 
-📦 reports/
-    Manual evaluation
+# Task 1 — Mountain Name Recognition (NLP)
 
-    The complete implementation is available in notebooks/02_training_colab.ipynb.
+## Goal
 
-# Mountain Name Recognition with Transformers
+Develop a model that identifies mountain names in text.
 
-Named entity recognition project for detecting mountain names in English text.
+### Project structure
 
-## Project status
+- `01_dataset_creation.ipynb` — dataset generation
+- `02_training_colab.ipynb` — model training
+- `03_demo.ipynb` — inference examples
 
-The repository contains a reproducible synthetic dataset, training script,
-inference script, and Colab-ready notebooks. Model metrics and the Hugging Face
-weights link must be added after training.
+### Technologies
 
-## Dataset
+- Python
+- PyTorch
+- Hugging Face Transformers
 
-The dataset contains 3,000 examples:
+---
 
-| Split | Examples | Positive | Negative | Entity mentions |
-|---|---:|---:|---:|---:|
-| Train | 2400 | 1680 | 720 | 2040 |
-| Validation | 300 | 210 | 90 | 255 |
-| Test | 300 | 210 | 90 | 255 |
+# Task 2 — Sentinel-2 Image Matching (Computer Vision)
 
-Labels use the BIO scheme:
+## Goal
 
-- `O`
-- `B-MOUNTAIN`
-- `I-MOUNTAIN`
+Detect reliable corresponding points between two Sentinel-2 satellite images acquired on different dates.
 
-The current dataset is synthetic and intended as a strong baseline. Its
-limitations are documented in the report and should be stated honestly.
+### Project structure
 
-## Project structure
+- `01_dataset_preparation.ipynb` — image loading and preprocessing
+- `02_demo.ipynb` — feature matching pipeline
 
-```text
-Task1_NER_Mountains/
-├── data/
-│   ├── raw/
-│   └── processed/
-├── notebooks/
-│   ├── 01_dataset_creation.ipynb
-│   ├── 02_training_colab.ipynb
-│   └── 03_demo.ipynb
-├── src/
-│   ├── generate_dataset.py
-│   ├── train.py
-│   └── inference.py
-├── models/
-│   └── model_link.txt
-├── reports/
-│   └── improvements_report.md
-├── requirements.txt
-└── README.md
-```
+### Pipeline
 
-## Installation
+- Load images
+- Resize images
+- Convert to grayscale
+- Detect SIFT keypoints
+- Match descriptors using FLANN
+- Apply Lowe Ratio Test
+- Estimate homography with RANSAC
+- Visualize verified matches
 
-```bash
-pip install -r requirements.txt
-```
+### Technologies
 
-## Training
-
-From the `Task1_NER_Mountains` directory:
-
-```bash
-python src/train.py \
-  --model_name distilbert/distilbert-base-cased \
-  --data_dir data/processed \
-  --output_dir models/mountain-ner \
-  --epochs 4
-```
-
-For Colab, select a GPU runtime before training.
-
-## Inference
-
-```bash
-python src/inference.py \
-  --model_path models/mountain-ner \
-  --text "We could see Mount Everest and Lhotse from the valley."
-```
-
-## Model weights
-
-After training, upload the best checkpoint to Hugging Face Hub and replace the
-placeholder in `models/model_link.txt`.
-
-## Reproducibility
-
-The random seed is fixed to `42`. Dataset splits and generation logic are
-documented in the dataset-creation notebook and script.
-
-## Limitations
-
-- Most examples are synthetic.
-- Template overlap can make the evaluation easier than real-world NER.
-- The dataset is English-only.
-- Ambiguous names require more contextual examples.
-- A final submission should include manual error analysis and real-text examples.
+- Python
+- OpenCV
+- rasterio
+- NumPy
